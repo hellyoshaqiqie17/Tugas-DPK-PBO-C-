@@ -1,19 +1,21 @@
 #include "pc.h"
 #include <iostream>
 
+using namespace std;
+
 int main() {
     PulseCounter pc;
-    std::cout << "Masukkan NoKBU: ";
-    std::cin >> pc.NoKBU;
-    std::cout << "Masukkan Jam Mulai (HH MM SS): ";
-    int jamMulai, menitMulai, detikMulai;
-    std::cin >> jamMulai >> menitMulai >> detikMulai;
+    cout << "Masukkan NoKBU: "; cin >> pc.NoKBU;
+    cout << "Masukkan Jam Mulai (HH MM SS): ";
+    int jamMulai, menitMulai, detikMulai; cin >> jamMulai >> menitMulai >> detikMulai;
+    
     pc.JamMulai.AssignClock(jamMulai, menitMulai, detikMulai);
-    std::cout << "Masukkan Jam Selesai (HH MM SS): ";
-    int jamSelesai, menitSelesai, detikSelesai;
-    std::cin >> jamSelesai >> menitSelesai >> detikSelesai;
+    cout << "Masukkan Jam Selesai (HH MM SS): ";
+    
+    int jamSelesai, menitSelesai, detikSelesai; cin >> jamSelesai >> menitSelesai >> detikSelesai;
     pc.JamSelesai.AssignClock(jamSelesai, menitSelesai, detikSelesai);
-    std::cout << "Jumlah Pulsa: " << pc.HitungPulsa() << std::endl;
-    std::cout << "Biaya Percakapan: " << pc.HitungBiayaPercakapan() << " rupiah" << std::endl;
+    
+    cout << "Jumlah Pulsa: " << pc.HitungPulsa() << endl;
+    cout << "Biaya Percakapan: " << pc.HitungBiayaPercakapan() << " rupiah" << endl;
     return 0;
 }
